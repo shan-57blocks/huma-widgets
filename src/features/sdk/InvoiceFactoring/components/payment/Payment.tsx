@@ -3,16 +3,10 @@ import { useResetAtom } from 'jotai/utils'
 import React, { useCallback, useEffect } from 'react'
 
 import { HumaModal, HumaModalHeader } from '../../../../../components/humaModal'
-<<<<<<< HEAD
-import { useContractFunction } from '../../../../../hooks/useContractFunction'
-import { CreditRecordType } from '../../../../../hooks/usePoolContract'
-import { useAppDispatch, useAppSelector } from '../../../../../hooks/useRedux'
-import { logAction } from '../../../../../utils/ddLogger'
-=======
 import { sendTxAtom, txAtom } from '../../../../../hooks/useContractFunction'
 import { CreditRecordType } from '../../../../../hooks/usePoolContract'
 import { useAppDispatch, useAppSelector } from '../../../../../hooks/useRedux'
->>>>>>> c3e79ea (expand useContractFunction to allow multiple calls)
+import { logAction } from '../../../../../utils/ddLogger'
 import { PoolInfoType } from '../../../../../utils/pool'
 import { isTxFailed } from '../../../../../utils/transaction'
 import { ErrorModal } from '../../../components'

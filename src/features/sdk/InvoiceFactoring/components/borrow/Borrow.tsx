@@ -20,10 +20,7 @@ import {
 import {
   selectIFBorrowStep,
   selectIFErrorMessage,
-<<<<<<< HEAD
   selectIFRequestLoan,
-=======
->>>>>>> c3e79ea (expand useContractFunction to allow multiple calls)
 } from '../../store/receivableFactoring.selectors'
 import { IF_BORROW_STEP } from '../../store/receivableFactoring.store'
 import { AllowList } from './AllowList'
