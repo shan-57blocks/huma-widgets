@@ -29,7 +29,7 @@ interface ExtendedChainInformation extends BasicChainInformation {
 }
 
 export enum ChainEnum {
-  Mainnet = 1,
+  // Mainnet = 1,
   Polygon = 137,
   Goerli = 5,
 }
@@ -104,4 +104,17 @@ export const getWalletAddressAbbr = (address: string) => {
   }
   const { length } = address
   return `${address.slice(0, 6)}...${address.slice(length - 4, length)}`
+}
+
+/**
+ * Returns the input chain ID if chain is supported. If not, return undefined
+ * @param chainId a chain ID, which will be returned if it is a supported chain ID
+ */
+export function supportedChainId(
+  chainId: number | undefined,
+): ChainEnum | undefined {
+  if (typeof chainId === 'number' && chainId in ChainEnum) {
+    return chainId
+  }
+  return undefined
 }

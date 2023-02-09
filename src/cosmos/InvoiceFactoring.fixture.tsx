@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { InvoiceFactoringBorrowWidget } from '../components/widgets/InvoiceFactoring/Borrow'
+
+import { InvoiceFactoringBorrowWidget } from '../components/widgets/InvoiceFactoring'
 import { ChainEnum } from '../utils/chain'
-import { PoolContractMap, POOL_NAME, POOL_TYPE } from '../utils/pool'
+import { POOL_NAME, POOL_TYPE, PoolContractMap } from '../utils/pool'
 
 function Fixture() {
   const poolInfo =

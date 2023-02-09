@@ -63,7 +63,7 @@ export function Evaluation({ poolInfo, tokenId }: Props): React.ReactElement {
         }
       }
     }
-    fetchData()
+    // fetchData()
   }, [
     account,
     chainId,

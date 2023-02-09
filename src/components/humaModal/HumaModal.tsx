@@ -30,6 +30,7 @@ export function HumaModal({
   const styles = {
     wrapper: css`
       max-width: 100vw;
+      box-sizing: border-box;
       width: ${isXsSize ? '100%' : width};
       height: auto;
       padding: ${padding};

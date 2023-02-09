@@ -15,7 +15,7 @@ type Props = {
   handleSuccess: () => void
 }
 
-export function InvoiceFactoringBorrowWidget({
+export function InvoiceFactoringBorrow({
   poolInfo,
   tokenId,
   isOpen,

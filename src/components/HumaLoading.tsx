@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import { useTheme } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 
-import { LoaderIcon } from './icons'
+import { HumaIcon, LoaderIcon } from './icons'
 
 type Props = {
   fullScreen?: boolean
@@ -18,29 +18,33 @@ export function HumaLoading({
   const [count, setCount] = useState(1)
   const intervalTime = 30
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (count <= pathLength) {
-        const element = document.querySelector(
-          `#huma-loader-wrapper > svg > path:nth-of-type(${count})`,
-        )
-        // @ts-ignore
-        element!.style.visibility = 'visible'
-        setCount((pre) => pre + 1)
-      } else {
-        const elements = document.querySelectorAll(
-          `#huma-loader-wrapper > svg > path`,
-        )
-        // @ts-ignore
-        elements!.forEach((element) => {
-          // @ts-ignore
-          element!.style.visibility = 'hidden'
-        })
-        setCount(1)
-      }
-    }, intervalTime)
-    return () => clearInterval(interval)
-  }, [count])
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (count <= pathLength) {
+  //       const element = document.querySelector(
+  //         `#huma-loader-wrapper > svg > path:nth-of-type(${count})`,
+  //       )
+  //       if (element) {
+  //         // @ts-ignore
+  //         element.style.visibility = 'visible'
+  //         setCount((pre) => pre + 1)
+  //       }
+  //     } else {
+  //       const elements = document.querySelectorAll(
+  //         `#huma-loader-wrapper > svg > path`,
+  //       )
+  //       if (elements) {
+  //         // @ts-ignore
+  //         elements.forEach((element) => {
+  //           // @ts-ignore
+  //           element.style.visibility = 'hidden'
+  //         })
+  //         setCount(1)
+  //       }
+  //     }
+  //   }, intervalTime)
+  //   return () => clearInterval(interval)
+  // }, [count])
 
   const styles = {
     wrapper: css`
@@ -50,15 +54,17 @@ export function HumaLoading({
       height: 50px;
     `,
     icon: css`
-      & > path {
+      width: 50px;
+      height: 50px;
+      /* & > path {
         visibility: hidden;
-      }
+      } */
     `,
   }
 
   return (
     <div css={styles.wrapper} id='huma-loader-wrapper'>
-      <LoaderIcon css={styles.icon} />
+      <HumaIcon css={styles.icon} />
     </div>
   )
 }

@@ -28,6 +28,7 @@ module.exports = {
     'cypress.config.ts',
     'cypress',
     'babel.config.js',
+    'webpack.cosmos.js',
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
