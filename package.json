@@ -67,7 +67,9 @@
     "contracts:compile:abi": "typechain --target ethers-v5 --out-dir src/abis/types \"./src/abis/**/*.json\"",
     "e2e": "cypress run --config baseUrl=http://localhost:3000 --headed --browser chrome --e2e",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "cosmos": "cosmos",
+    "cosmos:export": "cosmos-export"
   },
   "husky": {
     "hooks": {
@@ -124,6 +126,7 @@
     "husky": "^8.0.0",
     "lint-staged": "^10.5.4",
     "prettier": "^2.7.1",
+    "react-cosmos": "^5.7.2",
     "typechain": "^8.1.0"
   }
 }

@@ -25,7 +25,7 @@ export const useInvoice = (poolName: POOL_NAME) => {
         const metadataBase64 = await invoiceNFTContract.tokenURI(tokenId)
 
         switch (poolName) {
-          case POOL_NAME.RequestNetowrk:
+          case POOL_NAME.RequestNetwork:
             return getRNInvoiceMetadata(tokenId, metadataBase64, chainId)
 
           default:

@@ -12,6 +12,7 @@ import borrowReducers from './features/borrow/store/borrow.reducers'
 import invoiceFactoringReducers from './features/sdk/InvoiceFactoring/store/invoiceFactoring.reducers'
 import creditLineReducers from './features/sdk/CreditLine/store/creditLine.reducers'
 import lendReducers from './features/sdk/Lend/store/lend.reducers'
+import widgetsReducers from './components/widgets/store/widgets.reducers'
 
 export const store = configureStore({
   reducer: {
@@ -21,6 +22,7 @@ export const store = configureStore({
     invoiceFactoring: invoiceFactoringReducers,
     creditLine: creditLineReducers,
     lend: lendReducers,
+    widget: widgetsReducers,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

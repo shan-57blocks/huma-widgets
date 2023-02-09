@@ -27,6 +27,7 @@ module.exports = {
     'config-overrides.js',
     'cypress.config.ts',
     'cypress',
+    'babel.config.js',
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',

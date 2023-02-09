@@ -7,7 +7,7 @@ import { IconType } from '../utilTypes'
 import { UsdcIcon } from '../components/icons'
 
 export enum POOL_NAME {
-  RequestNetowrk = 'RequestNetowrk',
+  RequestNetwork = 'RequestNetwork',
   HumaCreditLine = 'HumaCreditLine',
 }
 
@@ -70,7 +70,7 @@ export const PoolMap: PoolMapType = {
     },
   },
   [POOL_TYPE.Invoice]: {
-    [POOL_NAME.RequestNetowrk]: {
+    [POOL_NAME.RequestNetwork]: {
       name: 'Request Network',
       borrowDesc:
         'Invoice factoring for your crypto invoices, up to 80% of their value. Only available to select invoicing platforms.',
@@ -105,7 +105,7 @@ export const PoolContractMap: PoolContractMapType = {
       },
     },
     [POOL_TYPE.Invoice]: {
-      [POOL_NAME.RequestNetowrk]: {
+      [POOL_NAME.RequestNetwork]: {
         basePoolConfig: '0x98f41d57C06b302AFf999f3F58f4ae7a3F884590',
         pool: '0x58AAF1f9cB10F335111A2129273056bbED251B61',
         poolFeeManager: '0x5B7841b94a3C7246662ef514745b034A6ceaAB15',
@@ -116,7 +116,7 @@ export const PoolContractMap: PoolContractMapType = {
           icon: UsdcIcon,
         },
         assetAddress: '0xf98B8A94eDBc9628B7b2141465980f2c3ACab23F',
-        poolName: POOL_NAME.RequestNetowrk,
+        poolName: POOL_NAME.RequestNetwork,
         poolType: POOL_TYPE.Invoice,
         poolAbi: RECEIVABLE_FACTORING_POOL_ABI,
         basePoolConfigAbi: BASE_POOL_CONFIG_ABI,
@@ -152,7 +152,7 @@ export const PoolContractMap: PoolContractMapType = {
       },
     },
     [POOL_TYPE.Invoice]: {
-      [POOL_NAME.RequestNetowrk]: {
+      [POOL_NAME.RequestNetwork]: {
         basePoolConfig: '0xBa779F41ae414dEc63265D79a02DED47fbe007a5',
         pool: '0x11672c0bBFF498c72BC2200f42461c0414855042',
         poolFeeManager: '0x7BA6B8eBC9b09c228582814D44D4a0F2B6B0B9E4',
@@ -163,7 +163,7 @@ export const PoolContractMap: PoolContractMapType = {
           icon: UsdcIcon,
         },
         assetAddress: '0x9aEBB4B8abf7afC96dC00f707F766499C5EbeDF1',
-        poolName: POOL_NAME.RequestNetowrk,
+        poolName: POOL_NAME.RequestNetwork,
         poolType: POOL_TYPE.Invoice,
         poolAbi: RECEIVABLE_FACTORING_POOL_ABI,
         basePoolConfigAbi: BASE_POOL_CONFIG_ABI,

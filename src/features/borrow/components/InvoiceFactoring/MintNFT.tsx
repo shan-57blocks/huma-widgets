@@ -31,7 +31,7 @@ type Props = {
 export function MintNFT({ handleSuccess }: Props): React.ReactElement {
   const { account, provider } = useWeb3React()
   const [checked, setChecked] = useState(false)
-  const invoiceNFTContract = useInvoiceNFTContract(POOL_NAME.RequestNetowrk)
+  const invoiceNFTContract = useInvoiceNFTContract(POOL_NAME.RequestNetwork)
   const [{ loading: txLoading, state: txState }, send] = useAtom(sendTxAtom)
   const reset = useResetAtom(txAtom)
 
