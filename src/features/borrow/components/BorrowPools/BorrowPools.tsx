@@ -1,8 +1,15 @@
 import { Box, css } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { Background } from '../../../../components/Background'
+import { InvoiceFactoringBorrowWidget } from '../../../../components/widgets/InvoiceFactoring'
+import { ChainEnum } from '../../../../utils/chain'
 
-import { POOL_NAME, POOL_TYPE, PoolMap } from '../../../../utils/pool'
+import {
+  POOL_NAME,
+  POOL_TYPE,
+  PoolMap,
+  PoolContractMap,
+} from '../../../../utils/pool'
 import { BorrowCreditLinePool } from './BorrowCreditLinePool'
 import { BorrowInvoiceFactoringPool } from './BorrowInvoiceFactoringPool'
 
@@ -28,6 +35,16 @@ export function BorrowPools(): React.ReactElement {
     `,
   }
 
+  const [isOpen, setIsOpen] = useState(true)
+
+  const handleClose = () => {
+    setIsOpen(false)
+  }
+
+  const handleSuccess = () => {
+    setIsOpen(false)
+  }
+
   return (
     <Box css={styles.wrapper}>
       {creditLinePoolNames.map((creditLinePoolName) => (
@@ -47,6 +64,17 @@ export function BorrowPools(): React.ReactElement {
         </Box>
       ))}
       <Background />
+      <InvoiceFactoringBorrowWidget
+        tokenId='26337444204170564170797783893924018297742414848733412072645327877464077162747'
+        poolInfo={
+          PoolContractMap[ChainEnum.Goerli][POOL_TYPE.Invoice][
+            POOL_NAME.RequestNetwork
+          ]
+        }
+        isOpen={isOpen}
+        handleClose={handleClose}
+        handleSuccess={handleSuccess}
+      />
     </Box>
   )
 }

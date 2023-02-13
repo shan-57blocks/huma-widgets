@@ -19,7 +19,10 @@ type Props = {
 
 export function Evaluation({ poolInfo, tokenId }: Props): React.ReactElement {
   const dispatch = useAppDispatch()
-  const { account, chainId } = useWeb3React()
+  const { account, chainId, isActive } = useWeb3React()
+
+  console.log(3333, account)
+  console.log(6666, isActive)
 
   useEffect(() => {
     const fetchData = async () => {

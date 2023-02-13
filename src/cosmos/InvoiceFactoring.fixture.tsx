@@ -131,7 +131,7 @@ export const injected = new (class extends Eip1193Bridge {
 
 function Fixture() {
   // @ts-ignore
-  window.ethereum = injected
+  // window.ethereum = injected
   const poolInfo =
     PoolContractMap[ChainEnum.Goerli][POOL_TYPE.Invoice][
       POOL_NAME.RequestNetwork
