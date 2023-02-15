@@ -6,10 +6,8 @@ import { Box, Button, Menu, MenuItem } from '@mui/material'
 import { useWeb3React } from '@web3-react/core'
 import React, { ReactElement, useMemo } from 'react'
 
-import { Provider } from 'jotai'
-import { USDCFaucetButton } from './USDCFaucetButton'
 import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux'
-import { ChainEnum, CHAINS, SupportedChainIds } from '../../../utils/chain'
+import { CHAINS, SupportedChainIds } from '../../../utils/chain'
 import { switchChainThunk } from '../store/thunks/switchChainThunk'
 import { selectWalletState } from '../store/wallet.selectors'
 
@@ -77,11 +75,6 @@ export function SwitchChainButton(): ReactElement | null {
           {chain?.name}
         </Box>
       </Button>
-      {chainId === ChainEnum.Goerli && (
-        <Provider>
-          <USDCFaucetButton chainId={chainId} />
-        </Provider>
-      )}
       <Menu
         id='switch-chain-menu'
         anchorEl={anchorEl}

@@ -46,6 +46,7 @@
     "graphql": "^16.6.0",
     "history": "^5.3.0",
     "jotai": "^1.13.1",
+    "jotai-immer": "^0.2.0",
     "moment": "^2.29.4",
     "qrcode": "^1.5.1",
     "query-string": "^7.1.1",
@@ -64,7 +65,7 @@
     "zustand": "^4.3.2"
   },
   "scripts": {
-    "start": "GENERATE_SOURCEMAP=false react-app-rewired start",
+    "start": "GENERATE_SOURCEMAP=false PORT=3001 react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "contracts:compile:abi": "typechain --target ethers-v5 --out-dir src/abis/types \"./src/abis/**/*.json\"",

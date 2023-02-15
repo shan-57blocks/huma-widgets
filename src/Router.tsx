@@ -2,12 +2,7 @@ import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 
 import { Switch404 } from './components/Switch404'
-import {
-  BorrowPools,
-  CreditLine,
-  InvoceFactoring,
-} from './features/borrow/components'
-import { LendPools } from './features/lend/components'
+import { StreamBorrow } from './features/stream'
 
 export const routes: {
   [page: string]: {
@@ -16,22 +11,9 @@ export const routes: {
     component: () => React.ReactElement
   }
 } = {
-  borrow: {
-    path: '/borrow',
-    component: BorrowPools,
-    isRoot: true,
-  },
-  borrowInvoice: {
-    path: '/borrow/invoice',
-    component: InvoceFactoring,
-  },
-  borrowCreditLine: {
-    path: '/borrow/credit-line',
-    component: CreditLine,
-  },
   lend: {
-    path: '/lend',
-    component: LendPools,
+    path: '/stream/borrow',
+    component: StreamBorrow,
     isRoot: true,
   },
 }
@@ -47,7 +29,7 @@ function Router() {
           component={route.component}
         />
       ))}
-      <Route exact path='/' render={() => <Redirect to='/borrow' />} />
+      <Route exact path='/' render={() => <Redirect to='/stream/borrow' />} />
     </Switch404>
   )
 }
