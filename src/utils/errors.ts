@@ -1,4 +1,6 @@
 /* eslint-disable max-classes-per-file */
+import { EARejectMessage } from './const'
+
 export const DEFAULT_ERROR_HEADER = `Please refresh the page and try again.`
 export const DEFAULT_ERROR_ACTION = `Reload the page`
 
@@ -43,5 +45,11 @@ export class MetaMaskConnectionError extends ConnectionError {
       action: `Reload`,
       message: `'A Metamask error caused your wallet to disconnect. Reload the page to reconnect.'`,
     })
+  }
+}
+
+export class EARejectionError extends Error {
+  constructor() {
+    super(EARejectMessage)
   }
 }

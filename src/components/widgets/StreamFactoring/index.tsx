@@ -1,6 +1,6 @@
 import { PoolInfoType } from '../../../utils/pool'
 import Widget from '../Widget'
-import { InvoiceFactoringBorrow } from './Borrow'
+import { StreamFactoringBorrow } from './Borrow'
 
 export type WidgetProps = {
   poolInfo: PoolInfoType
@@ -13,7 +13,7 @@ export type WidgetProps = {
 export function InvoiceFactoringBorrowWidget(props: WidgetProps) {
   return (
     <Widget>
-      <InvoiceFactoringBorrow {...props} />
+      <StreamFactoringBorrow {...props} />
     </Widget>
   )
 }

@@ -7,7 +7,7 @@ import { ethers, Wallet } from 'ethers'
 import { deepCopy } from 'ethers/lib/utils'
 import React, { useState } from 'react'
 
-import { InvoiceFactoringBorrowWidget } from '../components/widgets/InvoiceFactoring'
+import { InvoiceFactoringBorrowWidget } from '../components/widgets/StreamFactoring'
 import { ChainEnum } from '../utils/chain'
 import { POOL_NAME, POOL_TYPE, PoolContractMap } from '../utils/pool'
 
