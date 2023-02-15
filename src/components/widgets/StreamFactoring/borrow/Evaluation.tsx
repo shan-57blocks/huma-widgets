@@ -1,8 +1,8 @@
 import { useWeb3React } from '@web3-react/core'
 import React, { useEffect } from 'react'
 
-import { LoadingModal } from '../components'
-import useEA from '../hooks/useEA'
+import { LoadingModal } from '../../components'
+import useEA from '../../hooks/useEA'
 
 type Props = {
   payerAddress: string

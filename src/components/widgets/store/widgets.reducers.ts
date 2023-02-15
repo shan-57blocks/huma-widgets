@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ApproveInfoType } from '../../../services/EAService'
+import { ApproveInfo } from '../../../services/EAService'
 
 import { initialWidgetState, WIDGET_STEP } from './widgets.store'
 
@@ -20,7 +20,7 @@ export const widgetSlice = createSlice({
     setStep: (state, { payload }: PayloadAction<WIDGET_STEP>) => {
       state.step = payload
     },
-    setApproveInfo: (state, { payload }: PayloadAction<ApproveInfoType>) => {
+    setApproveInfo: (state, { payload }: PayloadAction<ApproveInfo>) => {
       state.approveInfo = payload
       if (payload.creditLimit > 0) {
         state.step = WIDGET_STEP.Borrow

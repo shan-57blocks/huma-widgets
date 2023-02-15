@@ -1,3 +1,4 @@
+import { sleep } from '../utils/common'
 import configUtil from '../utils/config'
 import { logError } from '../utils/ddLogger'
 import { EARejectionError } from '../utils/errors'
@@ -11,7 +12,7 @@ type EAPayloadStream = {
 
 export type EAPayload = EAPayloadStream
 
-export type ApproveInfoType = {
+export type ApproveInfo = {
   aprInBps: number
   creditLimit: number
   intervalInDays: number
@@ -25,6 +26,21 @@ export type ApproveInfoType = {
 }
 
 const approve = async (payload: EAPayload) => {
+  await sleep(3000)
+  return {
+    tokenSymbol: 'USDC',
+    tokenName: 'TestToken',
+    tokenDecimal: 6,
+    creditLimit: 100000000,
+    intervalInDays: 28,
+    remainingPeriods: 1,
+    aprInBps: 0,
+    receivableAsset: '0x9aEBB4B8abf7afC96dC00f707F766499C5EbeDF1',
+    receivableParam:
+      '0xce03e6afc20ace36be2b60614a0e92eded16639b88c8c31c2061aa5c8a62dfe0',
+    receivableAmount: 100000000,
+  } as ApproveInfo
+
   try {
     const { data } = await request.post(
       `${configUtil.EABaseUrl}/underwriter/underwrite`,
@@ -34,7 +50,7 @@ const approve = async (payload: EAPayload) => {
       throw new EARejectionError()
     }
 
-    return data as ApproveInfoType
+    return data as ApproveInfo
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {

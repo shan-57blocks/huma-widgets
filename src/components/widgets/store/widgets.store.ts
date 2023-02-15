@@ -1,4 +1,4 @@
-import { ApproveInfoType } from '../../../services/EAService'
+import { ApproveInfo } from '../../../services/EAService'
 
 export enum WIDGET_TYPE {
   BORROW = 'BORROW',
@@ -16,7 +16,7 @@ export enum WIDGET_STEP {
 export type WidgetState = {
   step: WIDGET_STEP
   type?: WIDGET_TYPE
-  approveInfo?: ApproveInfoType
+  approveInfo?: ApproveInfo
   borrowAmount?: number
   chargedFees?: number
   borrowAmountNet?: number

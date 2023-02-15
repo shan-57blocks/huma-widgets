@@ -7,7 +7,7 @@ import { ethers, Wallet } from 'ethers'
 import { deepCopy } from 'ethers/lib/utils'
 import React, { useState } from 'react'
 
-import { InvoiceFactoringBorrowWidget } from '../components/widgets/StreamFactoring'
+import { StreamFactoringBorrow } from '../components/widgets/StreamFactoring/borrow'
 import { ChainEnum } from '../utils/chain'
 import { POOL_NAME, POOL_TYPE, PoolContractMap } from '../utils/pool'
 
@@ -146,13 +146,13 @@ function Fixture() {
     setIsOpen(false)
   }
 
-  const tokenId =
-    '26337444204170564170797783893924018297742414848733412072645327877464077162747'
+  const payerAddress = '0x13a9211986B491F398A14ca23a2FDefF3EE64244'
+  const fUSDCx = '0x8aE68021f6170E5a766bE613cEA0d75236ECCa9a'
 
   return (
-    <InvoiceFactoringBorrowWidget
-      tokenId={tokenId}
-      poolInfo={poolInfo}
+    <StreamFactoringBorrow
+      payerAddress={payerAddress}
+      superToken={fUSDCx}
       isOpen={isOpen}
       handleClose={handleClose}
       handleSuccess={handleSuccess}
