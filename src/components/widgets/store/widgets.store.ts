@@ -8,6 +8,7 @@ export enum WIDGET_TYPE {
 export enum WIDGET_STEP {
   Evaluation = 'Evaluation',
   AddToAllowList = 'AddToAllowList',
+  MintNFT = 'MintNFT',
   Borrow = 'Borrow',
   Done = 'Done',
   Error = 'Error',

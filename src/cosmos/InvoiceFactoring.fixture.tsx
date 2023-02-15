@@ -151,6 +151,7 @@ function Fixture() {
 
   return (
     <StreamFactoringBorrow
+      poolInfo={poolInfo}
       payerAddress={payerAddress}
       superToken={fUSDCx}
       isOpen={isOpen}

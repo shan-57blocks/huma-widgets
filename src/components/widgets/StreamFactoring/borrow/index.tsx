@@ -1,13 +1,16 @@
 import React from 'react'
 
 import { useAppSelector } from '../../../../hooks/useRedux'
+import { PoolInfoType } from '../../../../utils/pool'
 import { WidgetWrapper } from '../../components/WidgetWrapper'
 import { selectWidgetState } from '../../store/widgets.selectors'
 import { WIDGET_STEP } from '../../store/widgets.store'
 import Widget from '../../Widget'
+import { ChooseAmount } from './ChooseAmount'
 import { Evaluation } from './Evaluation'
 
 type Props = {
+  poolInfo: PoolInfoType
   payerAddress: string
   superToken: string
   isOpen: boolean
@@ -16,6 +19,7 @@ type Props = {
 }
 
 export function StreamFactoringBorrow({
+  poolInfo,
   payerAddress,
   superToken,
   isOpen,
@@ -34,6 +38,7 @@ export function StreamFactoringBorrow({
         {step === WIDGET_STEP.Evaluation && (
           <Evaluation payerAddress={payerAddress} superToken={superToken} />
         )}
+        {step === WIDGET_STEP.Borrow && <ChooseAmount poolInfo={poolInfo} />}
       </WidgetWrapper>
     </Widget>
   )

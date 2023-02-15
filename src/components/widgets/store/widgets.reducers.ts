@@ -30,6 +30,21 @@ export const widgetSlice = createSlice({
         state.step = WIDGET_STEP.Error
       }
     },
+    setBorrowInfo: (
+      state,
+      {
+        payload,
+      }: PayloadAction<{
+        borrowAmount: number
+        chargedFees: number
+        nextStep: WIDGET_STEP
+      }>,
+    ) => {
+      state.borrowAmount = payload.borrowAmount
+      state.chargedFees = payload.chargedFees
+      state.borrowAmountNet = payload.borrowAmount - payload.chargedFees
+      state.step = payload.nextStep
+    },
     setError: (
       state,
       {
@@ -43,7 +58,7 @@ export const widgetSlice = createSlice({
   },
 })
 
-export const { resetState, setStep, setApproveInfo, setError } =
+export const { resetState, setStep, setApproveInfo, setBorrowInfo, setError } =
   widgetSlice.actions
 
 export default widgetSlice.reducer
