@@ -29,6 +29,7 @@ module.exports = {
     'cypress',
     'babel.config.js',
     'webpack.cosmos.js',
+    'rollup.config.js',
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',

@@ -2,6 +2,8 @@
   "name": "huma-widgets",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "dependencies": {
     "@apollo/client": "^3.7.2",
     "@coinbase/wallet-sdk": "^3.5.3",
@@ -66,14 +68,13 @@
   },
   "scripts": {
     "start": "GENERATE_SOURCEMAP=false PORT=3001 react-app-rewired start",
-    "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "contracts:compile:abi": "typechain --target ethers-v5 --out-dir src/abis/types \"./src/abis/**/*.json\"",
     "e2e": "cypress run --config baseUrl=http://localhost:3000 --headed --browser chrome --e2e",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
     "cosmos": "cosmos",
-    "cosmos:export": "cosmos-export"
+    "build": "rollup -c"
   },
   "husky": {
     "hooks": {
@@ -103,6 +104,11 @@
     "@babel/preset-react": "^7.14.5",
     "@emotion/babel-plugin": "^11.10.2",
     "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@svgr/rollup": "^6.5.1",
     "@svgr/webpack": "^6.5.1",
     "@testing-library/cypress": "^9.0.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -133,6 +139,9 @@
     "lint-staged": "^10.5.4",
     "prettier": "^2.7.1",
     "react-cosmos": "^5.7.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
     "typechain": "^8.1.0",
     "url-loader": "^4.1.1"
   }
