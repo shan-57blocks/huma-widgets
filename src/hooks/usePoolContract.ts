@@ -314,6 +314,7 @@ export function useFeeManager(poolName: POOL_NAME, poolType: POOL_TYPE) {
    */
   const getFeesCharged = useCallback(
     (requestedLoan: number) => {
+      const HUNDRED_PERCENT_IN_BPS = 10000
       if (!fees || !requestedLoan || !poolInfo) {
         return 0
       }
@@ -322,11 +323,9 @@ export function useFeeManager(poolName: POOL_NAME, poolType: POOL_TYPE) {
       const { _frontLoadingFeeFlat: feeFlat, _frontLoadingFeeBps: feeBps } =
         fees
 
-      // @TODO: Figure out why feeBps.div(10000) directly not work
       return feeBps
-        .div(100)
         .mul(requestedLoan)
-        .div(100)
+        .div(HUNDRED_PERCENT_IN_BPS)
         .add(downScale(feeFlat.toNumber(), decimals))
         .toNumber()
     },

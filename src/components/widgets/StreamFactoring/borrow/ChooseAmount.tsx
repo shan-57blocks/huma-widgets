@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 
+import { useFeeManager } from '../../../../hooks/usePoolContract'
 import { useAppDispatch, useAppSelector } from '../../../../hooks/useRedux'
-import { useRFFeeManager } from '../../../../hooks/useRFPoolContract'
 import { PoolInfoType } from '../../../../utils/pool'
 import { ChooseAmountModal } from '../../components'
 import { setBorrowInfo } from '../../store/widgets.reducers'
@@ -15,7 +15,7 @@ type Props = {
 export function ChooseAmount({ poolInfo }: Props): React.ReactElement | null {
   const dispatch = useAppDispatch()
   const { approveInfo } = useAppSelector(selectWidgetState)
-  const { getFeesCharged } = useRFFeeManager(poolInfo.poolName)
+  const { getFeesCharged } = useFeeManager(poolInfo.poolName, poolInfo.poolType)
   const [chargedFees, setChargedFees] = useState(0)
   const [currentAmount, setCurrentAmount] = useState(0)
 
@@ -49,6 +49,8 @@ export function ChooseAmount({ poolInfo }: Props): React.ReactElement | null {
       sliderMax={approveInfo.creditLimit}
       currentAmount={currentAmount}
       tokenSymbol={approveInfo.tokenSymbol}
+      topLeft='Fees'
+      topRight={`${chargedFees} ${approveInfo.tokenSymbol}`}
       handleChangeAmount={handleChangeAmount}
       handleAction={handleAction}
       actionText='Mint NFT'

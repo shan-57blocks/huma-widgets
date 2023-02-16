@@ -26,7 +26,7 @@ export type ApproveInfo = {
 }
 
 const approve = async (payload: EAPayload) => {
-  await sleep(3000)
+  await sleep(1000)
   return {
     tokenSymbol: 'USDC',
     tokenName: 'TestToken',

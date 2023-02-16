@@ -7,6 +7,7 @@ import { IconType } from '../utilTypes'
 import { UsdcIcon } from '../components/icons'
 
 export enum POOL_NAME {
+  Superfluid = 'Superfluid',
   RequestNetwork = 'RequestNetwork',
   HumaCreditLine = 'HumaCreditLine',
 }
@@ -14,16 +15,6 @@ export enum POOL_NAME {
 export enum POOL_TYPE {
   Invoice = 'Invoice',
   CreditLine = 'CreditLine',
-}
-
-export type PoolMapType = {
-  [poolType in POOL_TYPE]: {
-    [poolName: string]: {
-      name: string
-      borrowDesc: string
-      lendDesc: string
-    }
-  }
 }
 
 export type PoolInfoType = {
@@ -59,24 +50,9 @@ export type PoolContractMapType = {
   }
 }
 
-export const PoolMap: PoolMapType = {
-  [POOL_TYPE.CreditLine]: {
-    [POOL_NAME.HumaCreditLine]: {
-      name: 'Huma Credit Line',
-      borrowDesc:
-        'Credit lines backed by your future crypto income. Only available to the members of partner DAOs during beta.',
-      lendDesc:
-        'Earn active yield by participating in credit lines backed by on-chain income. Only available to the members of partner DAOs during beta.',
-    },
-  },
-  [POOL_TYPE.Invoice]: {
-    [POOL_NAME.RequestNetwork]: {
-      name: 'Request Network',
-      borrowDesc:
-        'Invoice factoring for your crypto invoices, up to 80% of their value. Only available to select invoicing platforms.',
-      lendDesc:
-        'Earn active yield by participating in this crypto invoice factoring market where loans are backed by collateralized invoice NFTs and paid back automatically when the invoice is paid.',
-    },
+export const PoolMap = {
+  [ChainEnum.Goerli]: {
+    [POOL_NAME.Superfluid]: '0x11672c0bBFF498c72BC2200f42461c0414855042',
   },
 }
 
